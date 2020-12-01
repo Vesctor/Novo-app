@@ -7,32 +7,31 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class AvaliacaoComponent implements OnInit{
     @Input()
-    public nota=[{
-        id:1,
-        nota:["heart"]
-    },
-    {
-        id:2,
-        nota:["heart","heart"]
-    },
-    {
-        id:3,
-        nota:["heart","heart","heart"]
-    },
-    {
-        id:4,
-        nota:["heart","heart","heart","heart"]
-    },
-    {
-        id:5,
-        nota:["heart","heart","heart","heart","heart"]
-    }
-    ];
-    
-    public icones ="heart";
+    public nota = 0;
+    public icones = [];
+
 
     ngOnInit(){
         console.log(this.nota);
+        
+        for (let i = 0;i<=4;i++){
+            let minimo = i;
+            let maximo = i+1;
+            let nomeIcone = null;
+
+            if (this.nota<=minimo){
+                nomeIcone="heart-outline";
+            }
+
+            if(this.nota > minimo && this.nota < maximo){
+                nomeIcone="heart-half";
+            }
+
+            if (this.nota >= maximo){
+                nomeIcone="heart";
+            }
+            this.icones[i]=nomeIcone;
+        }
     }
 
 }
