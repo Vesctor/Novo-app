@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { SeriesInfoComponent } from './series/series-info.component';
 import { SeriesListComponent } from './series/series-list.component';
+import { SeriesService } from './series/series.service';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'series/info/:id',
     component: SeriesInfoComponent
+  },
+  {
+    path: 'series/service',
+    component: SeriesService
   }
 ];
 

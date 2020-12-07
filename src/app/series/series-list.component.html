@@ -14,7 +14,9 @@
                 <h3>A serie foi lançada em {{serie.dataLancamento}} e possui {{serie.temporadas}} temporadas</h3>
                 <p>Nota: {{serie.nota}}</p>
 
-                <app-avaliacao>nota="{{series.nota}}"</app-avaliacao>
+                <app-avaliacao>nota="{{serie.nota}}"</app-avaliacao>
+
+                <a []="['/series/info, serie.id']">Visualizar</a>
 
             </ion-label>
         </ion-item>

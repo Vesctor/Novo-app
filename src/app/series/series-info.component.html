@@ -1,1 +1,24 @@
-<h2>ola</h2>
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        Vitor's page
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-card-subtitle>{{serie.datalacamento}}</ion-card-subtitle>
+            <ion-card-title>{{serie.nome}}</ion-card-title>
+        </ion-card-header>
+
+    <ion-card-content>
+        Serie {{serie.nome}} com {{serie.temporadas}} temporadas;
+
+        <app-avaliacao nota={{serie.avaliacao}}></app-avaliacao>
+    </ion-card-content>
+    </ion-card>
+    
+  </ion-content>

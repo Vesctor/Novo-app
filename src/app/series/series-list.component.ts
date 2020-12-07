@@ -1,3 +1,4 @@
+import { SeriesService } from './series.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,20 +7,11 @@ import { Component } from '@angular/core';
 })
 
 export class SeriesListComponent{
-    public series = [{
-            id:1,
-            nome: 'Futurama',
-            dataLancamento: '10 de Nov de 2000',
-            temporadas: 5,
-            nota: 4.5
-        },
-        {
-            id:2,
-            nome: 'The Simpsons',
-            dataLancamento: '10 de Dez de 2000',
-            temporadas: 30,
-            nota: 5
-        }
-    ];
+    public series = [];
     
+    constructor(private seriesService: SeriesService){}
+
+    ngOnInit(){
+        this.seriesService.getAllSeries();
+    }
 }
