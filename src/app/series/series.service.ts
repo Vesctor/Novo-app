@@ -31,7 +31,7 @@ export class SeriesService{
     }
 
     getAllSeriesId(id){
-        let serie;
+        let serie = null;
 
         for(let i=0; i<=this.series.length; i++){
             if(this.series[i].id == id){
@@ -41,5 +41,9 @@ export class SeriesService{
         }
 
         return serie;
+    }
+
+    addSeries(series){
+        this.series.push(series);
     }
 }

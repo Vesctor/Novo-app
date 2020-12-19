@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { SeriesAddComponent } from './series/series-add.component';
 import { SeriesInfoComponent } from './series/series-info.component';
 import { SeriesListComponent } from './series/series-list.component';
 import { SeriesService } from './series/series.service';
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'series/service',
     component: SeriesService
+  },
+  {
+    path: 'series/add',
+    component: SeriesAddComponent
   }
 ];
 
