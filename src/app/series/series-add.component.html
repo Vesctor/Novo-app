@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        Vitor's page
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content [fullscreen]="true">
+    <form (ngSubmit)="vaiFormulario()">
+        <ion-item>
+          <ion-label position="floating">Nome:</ion-label>
+          <ion-input [(ngModel)]="serie.nome" type="text" name="nome"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="floating">N° de temporadas:</ion-label>
+          <ion-input [(ngModel)]="serie.temporadas" type="number" name="temporadads"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Nota:</ion-label>
+            <ion-input [(ngModel)]="serie.avaliacao" type="number" name="nota"></ion-input>
+        </ion-item>
+        
+        <ion-button type="submmit">Vai</ion-button>
+      </form>
+</ion-content>
