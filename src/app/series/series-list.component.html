@@ -15,7 +15,8 @@
   </ion-fab>
 
     <ion-list>
-        <ion-item *ngFor="let serie of series">
+      <ion-item-sliding *ngFor="let serie of series">
+        <ion-item [routerLink]="['/series/info', serie.id]" >
             <ion-label>
               <h2>{{serie.nome}}</h2>
               <h3>A serie foi lançada em {{serie.dataLancamento}} e possui {{serie.temporadas}} temporadas</h3>
@@ -23,9 +24,14 @@
 
               <app-avaliacao avaliacao="{{serie.avaliacao}}"></app-avaliacao>
 
-              <a [routerLink]="['/series/info', serie.id]">Visualizar</a>
-
             </ion-label>
         </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="removerSerie(serie.id)">Deletar</ion-item-option>
+        </ion-item-options>
+      
+      </ion-item-sliding>
     </ion-list>
+
 </ion-content>    

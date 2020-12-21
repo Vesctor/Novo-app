@@ -46,4 +46,14 @@ export class SeriesService{
     addSeries(series){
         this.series.push(series);
     }
+
+    removerSeriePorId(id){
+        for(let i=0; i<=this.series.length; i++){
+            if(this.series[i].id == id){
+                this.series.splice(i,1);
+                break;
+            }
+        }
+    }
+    
 }
