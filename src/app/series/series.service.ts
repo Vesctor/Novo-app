@@ -1,11 +1,26 @@
 import { Injectable } from '@angular/core';
 import { SeriesInfoComponent } from './series-info.component';
 
+import { Storage } from '@ionic/storage';
+import{ v4 as uuidv4 } from 'uuid';
+
 @Injectable({
     providedIn: 'root'
 })
 
 export class SeriesService{
+
+    constructor(private storage: Storage){}
+
+    salvarNavegador(){
+        this.storage.set('teste', '123');
+    }
+
+    pegarNavegador(){
+        this.storage.get('teste').then(valor =>{
+            console.log('O resultado é de', valor);
+        });
+    }
 
     private series = [
         {
@@ -24,9 +39,11 @@ export class SeriesService{
         },
     ];
 
-    constructor() { }
-
     getAllSeries(){
+
+        this.storage.forEach((elemento) =>{
+            this.series.push(JSON.parse(elemento))
+        })
         return this.series;
     }
 
@@ -45,7 +62,9 @@ export class SeriesService{
 
     addSeries(series){
         if(series.id == null){
-            this.series.push(series);
+            series.id = uuidv4();
+            this.storage.set(series.id, JSON.stringify(series));
+            //this.series.push(series);
         } else{
             this.atualizarSerie(series);
         }

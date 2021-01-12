@@ -8,6 +8,15 @@
   
 <ion-content [fullscreen]="true">
 
+  <ion-button (click)="salvarNavegador()" expand="block" fill="solid" size="large" color="warning" type="submit">
+    Salvar Dados
+  </ion-button>
+
+  <ion-button (click)="pegarNavegador()" expand="block" fill="solid" size="large" color="danger" type="submit">
+    Pegar Dados
+  </ion-button>
+
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-buttom [routerLink]="['/series/add']">
       <ion-icon name="add"></ion-icon>

@@ -17,7 +17,7 @@ export class SeriesAddComponent implements OnInit{
         const id = this.activatedRoute.snapshot.paramMap.get('id');
         if(id !== null){
         this.serie = this.seriesService.getAllSeriesId(id);
-        this.serie.id = id;
+        //this.serie.id = id;
         }
     }
 
